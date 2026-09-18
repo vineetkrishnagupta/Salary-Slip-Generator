@@ -2,7 +2,8 @@
    ROOT & DESIGN TOKENS — PROFESSIONAL ZOHO-STYLE (GREEN THEME)
    ================================================ */
 :root {
-  --primary: #10B981; /* Professional Emerald Green */
+  --primary: #10B981;
+  /* Professional Emerald Green */
   --primary-light: #34D399;
   --primary-dark: #059669;
   --accent: #047857;
@@ -32,7 +33,9 @@
   --transition: all 0.2s ease-in-out;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -257,7 +260,8 @@ label {
   color: var(--text-secondary);
 }
 
-input, select {
+input,
+select {
   background: var(--bg-input);
   border: 1px solid #CBD5E1;
   border-radius: var(--radius-md);
@@ -274,7 +278,8 @@ input::placeholder {
   color: var(--text-muted);
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 1px var(--primary);
   background: #fff;
@@ -890,12 +895,22 @@ select option {
 }
 
 @keyframes slideInToast {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOutToast {
-  to { opacity: 0; transform: translateY(10px); }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
 
 /* ================================================
@@ -957,13 +972,16 @@ select option {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-base);
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(22, 163, 74, 0.25);
   border-radius: 99px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(22, 163, 74, 0.45);
 }
@@ -976,29 +994,41 @@ select option {
     size: A4 portrait;
     margin: 0;
   }
-  html, body {
+
+  html,
+  body {
     background: #ffffff !important;
     margin: 0 !important;
     padding: 0 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
+
   body::before {
     display: none !important;
   }
-  .header, .hero, .tabs, .a4-toolbar, .toast, .btn-group {
+
+  .header,
+  .hero,
+  .tabs,
+  .a4-toolbar,
+  .toast,
+  .btn-group {
     display: none !important;
   }
+
   .main-content {
     padding: 0 !important;
     margin: 0 !important;
     max-width: 100% !important;
   }
+
   .a4-preview-canvas {
     background: transparent !important;
     padding: 0 !important;
     box-shadow: none !important;
   }
+
   .slip-a4-page {
     box-shadow: none !important;
     margin: 0 auto !important;

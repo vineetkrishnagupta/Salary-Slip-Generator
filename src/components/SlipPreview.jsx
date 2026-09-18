@@ -306,7 +306,7 @@ export default function SlipPreview({ data }) {
 <html>
 <head>
   <meta charset="UTF-8"/>
-  <title>Salary Slip - ${employee.name}</title>
+  <title>Salary Slip - ${employee.name || 'Employee'} - ${getMonthName(period.month)} ${period.year}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>${sharedStyles}</style>
@@ -331,7 +331,7 @@ export default function SlipPreview({ data }) {
 <html>
 <head>
   <meta charset="UTF-8"/>
-  <title>Salary Slip - ${employee.name}</title>
+  <title>Salary Slip - ${employee.name || 'Employee'} - ${getMonthName(period.month)} ${period.year}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>${sharedStyles}</style>
@@ -551,4 +551,3 @@ export default function SlipPreview({ data }) {
     </div>
   );
 }
-
