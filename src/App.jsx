@@ -4,10 +4,11 @@ import {
   Building2, CalendarRange, TrendingUp, TrendingDown, BarChart2,
   CheckCircle2, ImagePlus, X, User
 } from 'lucide-react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import SlipPreview from './components/SlipPreview';
 import History from './components/History';
+import Blog from './components/Blog';
 import { calculateSalary, generateId } from './utils/salary';
-
 const MONTHS = [
   { v: '01', l: 'January' }, { v: '02', l: 'February' }, { v: '03', l: 'March' },
   { v: '04', l: 'April' }, { v: '05', l: 'May' }, { v: '06', l: 'June' },
@@ -41,7 +42,7 @@ function Toast({ msg }) {
   );
 }
 
-export default function App() {
+function SalarySlipGenerator() {
   const [tab, setTab] = useState('form');
   const [toast, setToast] = useState('');
   const [history, setHistory] = useState(() => {
@@ -169,6 +170,9 @@ export default function App() {
           <span className="header-logo-text">SalarySlip Pro</span>
         </div>
         <span className="header-badge">FREE TOOL</span>
+        <Link to="/blog" className="btn btn-secondary" style={{ padding: '6px 12px', fontSize: '0.8rem', marginLeft: '1rem', display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none' }}>
+          <FileText size={14} /> Blog
+        </Link>
       </header>
 
       <main className="main-content">
@@ -509,5 +513,16 @@ export default function App() {
 
       <Toast msg={toast} />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SalarySlipGenerator />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
