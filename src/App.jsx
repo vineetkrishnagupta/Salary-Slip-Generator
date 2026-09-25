@@ -7,7 +7,6 @@ import {
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import SlipPreview from './components/SlipPreview';
 import History from './components/History';
-import Blog from './components/Blog';
 import { calculateSalary, generateId } from './utils/salary';
 const MONTHS = [
   { v: '01', l: 'January' }, { v: '02', l: 'February' }, { v: '03', l: 'March' },
@@ -170,9 +169,6 @@ function SalarySlipGenerator() {
           <span className="header-logo-text">SalarySlip Pro</span>
         </div>
         <span className="header-badge">FREE TOOL</span>
-        <Link to="/blog" className="btn btn-secondary" style={{ padding: '6px 12px', fontSize: '0.8rem', marginLeft: '1rem', display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none' }}>
-          <FileText size={14} /> Blog
-        </Link>
       </header>
 
       <main className="main-content">
@@ -521,7 +517,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SalarySlipGenerator />} />
-        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );
