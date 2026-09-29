@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import {
   Briefcase, FileText, History as HistoryIcon, RotateCcw, Zap,
   Building2, CalendarRange, TrendingUp, TrendingDown, BarChart2,
-  CheckCircle2, ImagePlus, X, User
+  CheckCircle2, ImagePlus, X, User, BookOpen
 } from 'lucide-react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 import SlipPreview from './components/SlipPreview';
 import History from './components/History';
+import Blog from './components/Blog';
 import { calculateSalary, generateId } from './utils/salary';
 const MONTHS = [
   { v: '01', l: 'January' }, { v: '02', l: 'February' }, { v: '03', l: 'March' },
@@ -162,13 +163,22 @@ function SalarySlipGenerator() {
     <div className="app">
       {/* Header */}
       <header className="header">
-        <div className="header-logo">
+        <Link to="/" className="header-logo" style={{ textDecoration: 'none' }}>
           <div className="header-logo-icon">
             <Briefcase size={20} color="#fff" />
           </div>
           <span className="header-logo-text">SalarySlip Pro</span>
+        </Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) => `header-blog-link${isActive ? ' active' : ''}`}
+          >
+            <BookOpen size={15} />
+            Blog
+          </NavLink>
+          <span className="header-badge">FREE TOOL</span>
         </div>
-        <span className="header-badge">FREE TOOL</span>
       </header>
 
       <main className="main-content">
@@ -517,6 +527,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SalarySlipGenerator />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );
